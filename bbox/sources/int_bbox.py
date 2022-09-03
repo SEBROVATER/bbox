@@ -1,18 +1,18 @@
 from typing import Sequence
 
-from ..types import BBoxKind
 from .bbox_editor import BBoxEditor
 from .bbox_img import BBoxImg
+from ..types import BBoxKind
 
 
 class IntBBox(BBoxEditor, BBoxImg):
     def __init__(
-        self,
-        coords: Sequence,
-        kind: BBoxKind = "x1y1x2y2",
-        text: str = "",
-        score: float = 0.5,
-        **kwargs,
+            self,
+            coords: Sequence,
+            kind: BBoxKind = "x1y1x2y2",
+            text: str = "",
+            score: float = 0.5,
+            **kwargs,
     ):
         super().__init__(coords, kind)
         self.round_coords()
