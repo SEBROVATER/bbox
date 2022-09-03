@@ -3,7 +3,7 @@ from abc import ABC
 import cv2
 import numpy as np
 
-from ..cv_utils import resize
+from bbox.cv_utils import resize
 
 
 class BBoxImg(ABC):

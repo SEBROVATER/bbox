@@ -3,7 +3,7 @@ import math
 import numpy as np
 from numpy.linalg import linalg
 
-from .sources.bbox_creator import BaseBBox, AnyBBox
+from bbox.sources.bbox_creator import BaseBBox, AnyBBox
 
 
 def get_cos_between(bbox1: AnyBBox, bbox2: AnyBBox, xc: int | float, yc: int | float):

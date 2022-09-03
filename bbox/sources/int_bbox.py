@@ -1,8 +1,8 @@
 from typing import Sequence
 
-from ..types import BBoxKind
-from .bbox_editor import BBoxEditor
-from .bbox_img import BBoxImg
+from bbox.types import BBoxKind
+from bbox.sources.bbox_editor import BBoxEditor
+from bbox.sources.bbox_img import BBoxImg
 
 
 class IntBBox(BBoxEditor, BBoxImg):

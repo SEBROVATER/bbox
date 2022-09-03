@@ -1,7 +1,7 @@
 from abc import ABC
 
-from .bbox_creator import AnyBBox
-from .bbox_getter import BBoxGetter
+from bbox.sources.bbox_creator import AnyBBox
+from bbox.sources.bbox_getter import BBoxGetter
 
 
 class BBoxEditor(BBoxGetter, ABC):

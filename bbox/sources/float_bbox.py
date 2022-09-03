@@ -1,7 +1,7 @@
 from typing import Sequence
 
-from .bbox_editor import BBoxEditor
-from ..types import BBoxKind
+from bbox.sources.bbox_editor import BBoxEditor
+from bbox.types import BBoxKind
 
 
 class FloatBBox(BBoxEditor):
