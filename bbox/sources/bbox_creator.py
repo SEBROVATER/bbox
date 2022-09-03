@@ -1,6 +1,6 @@
 from typing import Sequence, TypeVar
 
-from bbox.types import BBoxKind
+from ..types import BBoxKind
 
 
 class BaseBBox:

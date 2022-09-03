@@ -1,6 +1,6 @@
 from typing import Sequence
 
-from bbox.types import BBoxKind
+from ..types import BBoxKind
 from .bbox_editor import BBoxEditor
 from .bbox_img import BBoxImg
 

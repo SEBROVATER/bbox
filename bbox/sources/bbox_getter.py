@@ -1,7 +1,7 @@
 from abc import ABC
 
 from .bbox_creator import BaseBBox
-from bbox.types import BBoxKind
+from ..types import BBoxKind
 
 
 class BBoxGetter(BaseBBox, ABC):
