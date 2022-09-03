@@ -9,6 +9,6 @@ setuptools.setup(
     url='https://github.com/SEBROVATER/bbox',
     license='MIT',
     packages=["bbox"],
-    install_requires=['numpy', "opencv-python", "imutils"],
+    # install_requires=['numpy', "opencv-python", "imutils"],
     long_description=open('README.md').read(),
 )
