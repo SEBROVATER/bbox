@@ -3,10 +3,10 @@ import math
 import numpy as np
 from numpy.linalg import linalg
 
-from bbox.bbox_creator import BBoxCreator as BaseBBox
+from bbox.sources.bbox_creator import BaseBBox, AnyBBox
 
 
-def get_cos_between(bbox1: BaseBBox, bbox2: BaseBBox, xc: int | float, yc: int | float):
+def get_cos_between(bbox1: AnyBBox, bbox2: AnyBBox, xc: int | float, yc: int | float):
     v1 = np.array([bbox1.xc - xc, bbox1.yc - yc])
     v2 = np.array([bbox2.xc - xc, bbox2.yc - yc])
 
@@ -17,10 +17,12 @@ def get_cos_between(bbox1: BaseBBox, bbox2: BaseBBox, xc: int | float, yc: int |
     return cos
 
 
-def get_IoU(bbox_1: BaseBBox, bbox_2: BaseBBox):
+def get_IoU(bbox_1: AnyBBox, bbox_2: AnyBBox):
     """Calculate Intersection over Union for two Bboxes"""
     try:
-        assert hasattr(bbox_1, "area") and hasattr(bbox_2, "area"), "one of bboxes doesn't have area attribute"
+        assert hasattr(bbox_1, "area") and hasattr(
+            bbox_2, "area"
+        ), "one of sources doesn't have area attribute"
     except Exception as exc:
         if bbox_1 is None or bbox_2 is None:
             return 0
@@ -62,7 +64,7 @@ def non_max_suppression(x1y1x2y2: np.ndarray | list, thr: float) -> list[int | f
     if len(x1y1x2y2) == 0:
         return []
 
-    if isinstance(x1y1x2y2[0], BaseBBox):
+    if issubclass(x1y1x2y2[0], BaseBBox):
         x1y1x2y2 = np.array([bbox.get_pascal_voc() for bbox in x1y1x2y2])
     elif not isinstance(x1y1x2y2, np.ndarray):
         x1y1x2y2 = np.array(x1y1x2y2)
