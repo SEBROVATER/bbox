@@ -10,4 +10,5 @@ setuptools.setup(
     license='MIT',
     packages=["bbox"],
     install_requires=['numpy', "opencv-python", "imutils"],
+    long_description=open('README.txt').read(),
 )
