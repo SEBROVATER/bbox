@@ -3,10 +3,10 @@ import math
 import numpy as np
 from numpy.linalg import linalg
 
-from .sources.bbox_creator import BaseBBox, AnyBBox
+from .sources.bbox_creator import BaseBBox
 
 
-def get_cos_between(bbox1: AnyBBox, bbox2: AnyBBox, xc: int | float, yc: int | float):
+def get_cos_between(bbox1, bbox2, xc: int | float, yc: int | float):
     v1 = np.array([bbox1.xc - xc, bbox1.yc - yc])
     v2 = np.array([bbox2.xc - xc, bbox2.yc - yc])
 
@@ -17,7 +17,7 @@ def get_cos_between(bbox1: AnyBBox, bbox2: AnyBBox, xc: int | float, yc: int | f
     return cos
 
 
-def get_IoU(bbox_1: AnyBBox, bbox_2: AnyBBox):
+def get_IoU(bbox_1, bbox_2):
     """Calculate Intersection over Union for two Bboxes"""
     try:
         assert hasattr(bbox_1, "area") and hasattr(

@@ -1,6 +1,5 @@
 from abc import ABC
 
-from .bbox_creator import AnyBBox
 from .bbox_getter import BBoxGetter
 
 
@@ -29,13 +28,13 @@ class BBoxEditor(BBoxGetter, ABC):
         self.x2 = self.x2 / value
         self.y2 = self.y2 / value
 
-    def replace_from(self, bbox: AnyBBox) -> None:
+    def replace_from(self, bbox) -> None:
         self.x1 = bbox.x1
         self.y1 = bbox.y1
         self.x2 = bbox.x2
         self.y2 = bbox.y2
 
-    def update_from(self, bbox: AnyBBox) -> None:
+    def update_from(self, bbox) -> None:
         self.x1 = min(self.x1, bbox.x1)
         self.y1 = min(self.y1, bbox.y1)
         self.x2 = max(self.x2, bbox.x2)
