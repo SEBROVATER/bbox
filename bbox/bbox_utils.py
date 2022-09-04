@@ -17,7 +17,7 @@ def get_cos_between(bbox1: AnyBBox, bbox2: AnyBBox, xc: int | float, yc: int | f
     return cos
 
 
-def get_IoU(bbox_1: AnyBBox, bbox_2:AnyBBox):
+def get_IoU(bbox_1: AnyBBox, bbox_2: AnyBBox):
     """Calculate Intersection over Union for two Bboxes"""
     try:
         assert hasattr(bbox_1, "area") and hasattr(

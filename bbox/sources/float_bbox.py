@@ -4,7 +4,6 @@ from .bbox_editor import BBoxEditor
 from ..types import BBoxKind
 
 
-
 class FloatBBox(BBoxEditor):
     def __init__(
         self,
