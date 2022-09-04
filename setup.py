@@ -1,14 +1,19 @@
-import setuptools
+from setuptools import setup, find_packages
 
-setuptools.setup(
+
+with open("README.md", "r") as file:
+    long_desc = file.read()
+
+setup(
     name="bbox",
-    version="0.0.1",
+    version="0.1.0",
     author="Konstantin Sebrovskiy",
     author_email="sebrovskiy.k@gmail.com",
-    description="Objected management of bbox",
+    description="Objected management of bboxes",
     url="https://github.com/SEBROVATER/bbox",
     license="MIT",
-    packages=["bbox"],
-    # install_requires=["numpy", "opencv-python"],
-    long_description=open("README.md").read(),
+    packages=find_packages(),
+    long_description=long_desc,
+    long_description_content_type="text/markdown",
+    python_requires=">=3.10",
 )
