@@ -10,6 +10,7 @@ __all__ = [
     "sort_clockwise",
     "get_distance",
     "non_max_suppression",
+    "types",
 ]
 
-del sources
+del sources, bbox_utils

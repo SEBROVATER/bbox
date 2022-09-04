@@ -8,7 +8,7 @@ setuptools.setup(
     description="Objected management of bbox",
     url="https://github.com/SEBROVATER/bbox",
     license="MIT",
-    # packages=["bbox"],
+    packages=["bbox"],
     # install_requires=["numpy", "opencv-python"],
     long_description=open("README.md").read(),
 )
