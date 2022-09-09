@@ -8,7 +8,7 @@ class FloatBBox(BBoxEditor):
     def __init__(
         self,
         coords: Sequence,
-        kind: BBoxKind = "x1y1x2y2",
+        kind: BBoxKind | str = "x1y1x2y2",
         text: str = "",
         score: float = 0.5,
         **kwargs,
