@@ -12,6 +12,7 @@ class BBoxKind(Enum):
     x1y1wh = "x1y1wh"
     pywinauto = "pywinauto"
     winocr = "winocr"
+    mss = "mss"
 
     def __str__(self):
         return self.name

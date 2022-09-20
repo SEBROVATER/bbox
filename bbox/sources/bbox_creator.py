@@ -46,8 +46,14 @@ class BaseBBox:
         self.x2 = coords.right
         self.y2 = coords.bottom
 
-    def __create_winocr(self, coords: Sequence) -> None:
+    def __create_winocr(self, coords: dict[str, int | float]) -> None:
         self.x1, self.y1 = coords["x"], coords["y"]
+        self.x2 = self.x1 + coords["width"]
+        self.y2 = self.y1 + coords["height"]
+
+    def __create_mss(self, coords: dict[str, int | float]):
+        self.x1 = coords["left"]
+        self.y1 = coords["top"]
         self.x2 = self.x1 + coords["width"]
         self.y2 = self.y1 + coords["height"]
 

@@ -32,6 +32,9 @@ class BBoxGetter(BaseBBox, ABC):
     def get_x1x2y1y2(self) -> tuple:
         return self.get_horizontal_list()
 
+    def get_mss(self) -> dict:
+        return {"top": self.y1, "left": self.x1, "width": self.w, "height": self.h}
+
     @property
     def w(self) -> int | float:
         return self.x2 - self.x1
